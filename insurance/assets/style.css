@@ -894,3 +894,181 @@ nav[aria-label="主导航"]{
   color:#475569;
   font-size:11px;
 }
+
+/* Workbench & case detail: scrollable chrome, sticky in-scroll controls */
+.partition-shell--scroll-chrome{
+  display:flex;
+  flex-direction:column;
+  min-height:0;
+  flex:1 1 auto;
+}
+
+.partition-shell--scroll-chrome>.scroll-region{
+  flex:1 1 auto;
+  min-height:0;
+  overflow-x:hidden;
+  overflow-y:auto!important;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-y;
+}
+
+.partition-shell--scroll-chrome>.scroll-region{
+  padding-bottom:calc(1rem + env(safe-area-inset-bottom,0px));
+}
+
+.partition-shell__scroll-head{
+  margin:-4px 0 0;
+}
+
+.partition-shell--compact-chrome .partition-shell__chrome{
+  position:relative;
+  z-index:12;
+}
+
+.scroll-sticky-bar{
+  position:sticky;
+  top:0;
+  z-index:10;
+  margin-top:-4px;
+  background:linear-gradient(180deg,rgba(248,250,252,.98) 0%,rgba(248,250,252,.94) 72%,rgba(248,250,252,0) 100%);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+
+.scroll-sticky-bar::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:1px;
+  background:rgba(226,232,240,.85);
+  pointer-events:none;
+}
+
+.case-detail-tabs{
+  margin-left:-1rem;
+  margin-right:-1rem;
+  padding-left:1rem;
+  padding-right:1rem;
+  padding-top:2px;
+}
+
+.workbench-filter-bar{
+  margin-left:-1rem;
+  margin-right:-1rem;
+  padding-left:1rem;
+  padding-right:1rem;
+}
+
+.partition-shell--scroll-chrome .case-brief-hero{
+  padding:12px;
+}
+
+.partition-shell--scroll-chrome .case-brief-title{
+  font-size:16px;
+  line-height:1.3;
+}
+
+.partition-shell--scroll-chrome .case-brief-actions{
+  grid-template-columns:1fr 1fr;
+  gap:6px;
+}
+
+.partition-shell--scroll-chrome .case-brief-export,
+.partition-shell--scroll-chrome .case-brief-pdf{
+  min-height:36px;
+  font-size:11px;
+}
+
+.workbench-stats-card{
+  display:grid;
+  gap:10px;
+}
+
+.workbench-stats-card__main{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.workbench-stats-card__icon{
+  display:flex;
+  height:32px;
+  width:32px;
+  flex-shrink:0;
+  align-items:center;
+  justify-content:center;
+  border-radius:10px;
+  background:#eff6ff;
+  color:#2563eb;
+}
+
+.workbench-stats-card__title{
+  margin:0;
+  color:#0f172a;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.35;
+}
+
+.workbench-stats-card__desc{
+  margin:2px 0 0;
+  color:#64748b;
+  font-size:10px;
+  line-height:1.4;
+}
+
+.workbench-stats-card__value{
+  margin:6px 0 0;
+  color:#0f172a;
+  font-size:22px;
+  font-weight:800;
+  line-height:1;
+}
+
+.workbench-stats-card__value span{
+  margin-left:4px;
+  font-size:12px;
+  font-weight:600;
+  color:#64748b;
+}
+
+.workbench-stats-card__metrics{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:6px;
+  border-top:1px solid #f1f5f9;
+  padding-top:10px;
+}
+
+.workbench-stats-card__metric{
+  border-radius:8px;
+  background:#f8fafc;
+  padding:6px 4px;
+  text-align:center;
+}
+
+.workbench-stats-card__metric strong{
+  display:block;
+  color:#0f172a;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.2;
+}
+
+.workbench-stats-card__metric span{
+  display:block;
+  margin-top:2px;
+  color:#64748b;
+  font-size:10px;
+  line-height:1.2;
+}
+
+.partition-shell .scroll-region{
+  padding-top:10px;
+}
+
+.partition-shell--compact-chrome .scroll-region{
+  padding-top:8px;
+}
